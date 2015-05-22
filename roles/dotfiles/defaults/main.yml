@@ -1,0 +1,22 @@
+---
+dotfiles_repo: "git@github.com:squiter/dotfiles.git"
+dotfiles_repo_local_destination: "~/dotfiles"
+dotfiles_home: "~"
+dotfiles_files:
+  - ackrc
+  - alias
+  - bash_profile
+  - bashrc
+  - bin
+  - config
+  - emacs
+  - emacs.d
+  - gemrc
+  - git-templates
+  - gitconfig
+  - gitignore_global
+  - pryrc
+  - tmux.conf
+  - vim
+  - vimrc
+  - zshrc
