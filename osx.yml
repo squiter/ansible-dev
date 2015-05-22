@@ -1,0 +1,9 @@
+---
+- name: Setting up OSX
+  hosts: localhost
+  sudo: no
+
+  roles:
+    - test
+    - homebrew
+    - homebrewcask

@@ -1,0 +1,4 @@
+---
+- name: 'Testando o lance'
+  sudo: no
+  shell: echo "Funfou!" > /tmp/ansible

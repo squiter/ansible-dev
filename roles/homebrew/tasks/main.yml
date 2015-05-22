@@ -1,0 +1,23 @@
+---
+- name: 'Brew is available?'
+  command: brew --version
+  register: brew_available
+  ignore_errors: True
+  changed_when: false
+
+- name: 'Install homebrew'
+  sudo: no
+  shell: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  when: brew_available|failed
+
+- name: 'Install default packages'
+  sudo: no
+  homebrew: name={{ item }} state=present
+  with_items:
+    - ack
+    - ctags
+    - git
+    - tmux
+    - tree
+    - vim
+    - wget

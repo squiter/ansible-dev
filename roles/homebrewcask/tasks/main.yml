@@ -1,0 +1,20 @@
+---
+- name: 'Installing Homebrewcask'
+  sudo: no
+  shell: brew install caskroom/cask/brew-cask
+
+- name: 'Installing default Apps'
+  sudo: no
+  homebrew_cask: name={{item}} state=present
+  with_items:
+    - adium
+    - alfred
+    - bartender
+    - cyberduck
+    - emacs
+    - evernote
+    - firefox
+    - fluid
+    - google-chrome
+    - iterm2
+    - vlc
