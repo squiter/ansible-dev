@@ -27,3 +27,6 @@
     state: link
   sudo: no
   with_items: dotfiles_files
+
+- name: Initializing my dotfile submodules
+  shell: "cd {{ dotfiles_repo_local_destination }} && git submodule update --init && cd -"
