@@ -1,0 +1,6 @@
+---
+- name: Pip packages
+  pip: name={{item}}
+  with_items:
+    - psutil
+    - pjson

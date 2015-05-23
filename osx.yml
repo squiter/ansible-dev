@@ -7,4 +7,5 @@
     - test
     - homebrew
     - homebrewcask
+    - pip
     - dotfiles
