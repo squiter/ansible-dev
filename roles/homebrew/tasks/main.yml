@@ -17,6 +17,7 @@
     - ack
     - ctags
     - git
+    - heroku-toolbelt
     - tmux
     - tree
     - vim
