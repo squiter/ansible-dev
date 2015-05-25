@@ -18,6 +18,8 @@
     - ctags
     - git
     - heroku-toolbelt
+    - rbenv
+    - ruby-build
     - tmux
     - tree
     - vim
