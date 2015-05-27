@@ -20,6 +20,7 @@
     - heroku-toolbelt
     - rbenv
     - ruby-build
+    - terminal-notifier
     - tmux
     - tree
     - vim
