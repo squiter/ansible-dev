@@ -18,6 +18,7 @@
     - ctags
     - git
     - heroku-toolbelt
+    - hh
     - rbenv
     - ruby-build
     - terminal-notifier
