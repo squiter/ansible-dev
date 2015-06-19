@@ -15,6 +15,7 @@
   homebrew: name={{ item }} state=present
   with_items:
     - ack
+    - ag
     - ctags
     - git
     - heroku-toolbelt
