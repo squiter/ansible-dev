@@ -10,6 +10,10 @@
   shell: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   when: brew_available|failed
 
+- name: 'Install brew services'
+  sudo: no
+  shell: brew tap homebrew/services
+
 - name: 'Install default packages'
   sudo: no
   homebrew: name={{ item }} state=present
