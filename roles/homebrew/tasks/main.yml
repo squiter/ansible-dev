@@ -24,6 +24,7 @@
     - git
     - heroku-toolbelt
     - hh
+    - jrnl
     - python
     - rbenv
     - ruby-build
