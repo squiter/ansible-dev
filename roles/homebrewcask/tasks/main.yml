@@ -1,7 +1,21 @@
 ---
+- name: 'Cask is available?'
+  command: brew cask --version
+  register: cask_available
+  ignore_errors: True
+  changed_when: false
+
 - name: 'Installing Homebrewcask'
   sudo: no
   shell: brew install caskroom/cask/brew-cask
+  when: brew_available|failed
+
+- name: Get list of apps installed with cask.
+  command: >
+    bash -l -c 'brew cask list'
+  register: homebrew_cask_list
+  always_run: yes
+  changed_when: false
 
 - name: 'Installing default Apps'
   sudo: no
@@ -11,8 +25,8 @@
     - alfred
     - bartender
     - cyberduck
-    - emacs
     - evernote
     - fluid
     - iterm2
     - vlc
+  when: "'{{ item }}' not in homebrew_cask_list.stdout"
