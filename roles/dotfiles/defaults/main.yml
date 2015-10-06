@@ -15,6 +15,7 @@ dotfiles_files:
   - git-templates
   - gitconfig
   - gitignore_global
+  - jrnl_config
   - pryrc
   - tmux.conf
   - vim
