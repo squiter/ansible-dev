@@ -30,3 +30,6 @@
 
 - name: Initializing my dotfile submodules
   shell: "cd {{ dotfiles_repo_local_destination }} && git submodule update --init && cd -"
+
+- name: Run OSX setup
+  shell: "cd {{ dotfiles_repo_local_destination }} && sh osx/init.sh"
