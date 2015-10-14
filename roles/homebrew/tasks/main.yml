@@ -22,6 +22,7 @@
     - ag
     - ctags
     - git
+    - gpg
     - heroku-toolbelt
     - hh
     - jrnl
