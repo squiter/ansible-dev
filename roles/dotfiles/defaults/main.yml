@@ -9,6 +9,7 @@ dotfiles_files:
   - bashrc
   - bin
   - config
+  - crontab
   - emacs
   - emacs.d
   - gemrc
