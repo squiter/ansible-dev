@@ -1,6 +1,5 @@
 ---
 - name: Pip packages
-  sudo: yes
   pip: name={{item}}
   with_items:
     - psutil
