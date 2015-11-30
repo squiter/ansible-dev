@@ -1,0 +1,9 @@
+---
+- name: Setting up Linux
+  hosts: localhost
+  sudo: no
+
+  roles:
+    - packages
+    - pip
+    - dotfiles
