@@ -26,6 +26,7 @@
     dest: "{{ dotfiles_home }}/.{{ item }}"
     state: link
   sudo: no
+  force: yes
   with_items: dotfiles_files
 
 - name: Initializing my dotfile submodules
