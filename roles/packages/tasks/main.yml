@@ -1,5 +1,6 @@
 ---
 - name: 'Installing packages'
+  sudo: yes
   apt: pkg={{ item }}
   with_items:
     - ack-grep
