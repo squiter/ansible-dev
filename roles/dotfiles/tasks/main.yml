@@ -25,15 +25,9 @@
     src: "{{ dotfiles_repo_local_destination }}/{{ item }}"
     dest: "{{ dotfiles_home }}/.{{ item }}"
     state: link
+    force: yes
   sudo: no
-  force: yes
   with_items: dotfiles_files
 
 - name: Initializing my dotfile submodules
   shell: "cd {{ dotfiles_repo_local_destination }} && git submodule update --init && cd -"
-
-- name: Set crontab
-  shell: "crontab ~/.crontab"
-
-- name: Run OSX setup
-  shell: "cd {{ dotfiles_repo_local_destination }} && sh osx/init.sh"
