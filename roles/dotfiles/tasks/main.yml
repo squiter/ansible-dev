@@ -31,3 +31,33 @@
 
 - name: Initializing my dotfile submodules
   shell: "cd {{ dotfiles_repo_local_destination }} && git submodule update --init && cd -"
+
+- name: Ensure Emacs dotfiles repository is cloned locally.
+  git:
+    repo: "{{ emacs_dotfiles_repo }}"
+    dest: "{{ emacs_dotfiles_repo_local_destination }}"
+  sudo: no
+
+- name: Ensure all configured Emacs dotfiles are links.
+  shell: "ls -F {{ emacs_dotfiles_home }}/{{ item }}"
+  register: existing_emacs_dotfile_info
+  failed_when: false
+  always_run: yes
+  changed_when: false
+  with_items: emacs_dotfiles_files
+
+- name: Remove existing Emacs dotfiles file if a replacement is being linked.
+  file:
+    path: "{{ emacs_dotfiles_home }}/{{ emacs_dotfiles_files[item.0] }}"
+    state: absent
+  when: "'@' not in item.1.stdout"
+  with_indexed_items: existing_emacs_dotfile_info.results
+
+- name: Link Emacs dotfiles into home folder.
+  file:
+    src: "{{ emacs_dotfiles_repo_local_destination }}/{{ item }}"
+    dest: "{{ emacs_dotfiles_home }}/.{{ item }}"
+    state: link
+    force: yes
+  sudo: no
+  with_items: emacs_dotfiles_files

@@ -10,8 +10,6 @@ dotfiles_files:
   - bin
   - config
   - crontab
-  - emacs
-  - emacs.d
   - gemrc
   - git-templates
   - gitconfig
@@ -22,3 +20,9 @@ dotfiles_files:
   - vim
   - vimrc
   - zshrc
+emacs_dotfiles_repo: "git@github.com:squiter/emacs-dotfiles.git"
+emacs_dotfiles_repo_local_destination: "~/projetos/emacs-dotfiles"
+emacs_dotfiles_home: "~"
+emacs_dotfiles_files:
+  - emacs
+  - emacs.d
